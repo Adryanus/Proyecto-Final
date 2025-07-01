@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+       <section class="logo">
+            <h1><a href="./index.html" title="Ir a la página principal de DB Electronics">DB ELECTRONICS</a></h1>
+            <p>Todo en electrónica</p>
+        </section>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./productos.html" title="Ver productos disponibles">DESTINOS</a></li>
+                <li><a href="./sobre-nosotros.html" title="Conocer sobre nosotros">SOBRE NOSOTROS</a></li>
+                <li><a href="./contacto.html" title="Contactar a DB Electronics">CONTACTANOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contacto" class="contacto">
+            <h2>Envianos tus datos y consulta y te responderemos por mail:</h2>
+            <form action="link_forms_pre" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="mensaje">Consulta:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+      
+        </section>
+
+        
+    </main>
+    
+   <footer>
+        <section class="footer">
+            <p>©DB Electronics© 2025 Todos los derechos reservados.</p>
+            <p>Diseñado por DB</p>
+        </section>
+    </footer>
+    <script src="codejs.js"></script> 
+</body>
+</html>

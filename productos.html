@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+        <section class="logo">
+            <h1><a href="./index.html" title="Ir a la página principal de DB Electronics">DB ELECTRONICS</a></h1>
+            <p>Todo en electrónica</p>
+        </section>
+         
+        <nav class ="navbar">
+            <ul>
+                <li><a href="./productos.html">PRODUCTOS</a></li>
+                <li><a href="./sobre-nosotros.html">SOBRE NOSOTROS</a></li>
+                <li><a href="./contacto.html">CONTACTANOS</a></li>
+                <li><a href="./carrito.html" title="Ver carrito de compras">
+                    <i class="fas fa-shopping-cart"></i> <!-- Ícono del carrito -->
+                    <span id="cart-count">0</span> <!-- Contador opcional -->
+                </a>
+            </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <h2>Productos</h2>
+    <div id="productos-container" class="productos-grid"></div>
+  </main>
+  <script src="./productos.js"></script>
+    <footer>
+        <section class="footer">
+            <p>©DB Electronics© 2025 Todos los derechos reservados.</p>
+            <p>Diseñado por DB</p>
+        </section>
+    </footer>
+</body>
+</html>
