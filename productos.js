@@ -1,7 +1,20 @@
- document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://dummyjson.com/products?limit=12")
-    .then(res => res.json())
-    .then(data => mostrarProductos(data.products));
+    document.addEventListener("DOMContentLoaded", () => {
+      const urls = [
+        "https://dummyjson.com/products/category/smartphones",
+        "https://dummyjson.com/products/category/laptops"
+      ];
+
+      Promise.all(urls.map(url => fetch(url).then(res => res.json())))
+        .then(results => {
+          const smartphones = results[0].products.slice(0, 7);
+          const laptops = results[1].products.slice(0, 5);
+
+          const productosCombinados = [...smartphones, ...laptops];
+
+          // Mostrar en el HTML
+          mostrarProductos(productosCombinados);
+        })
+        .catch(error => console.error("Error al cargar los productos:", error));
 
   actualizarContador();
 });
