@@ -1,22 +1,43 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Carrito de Compras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
-    <script defer src="./carrito.js"></script>
+    
 </head>
-<body>
+<body class = "body">
     <header class="header">
         <section class="logo">
-            <h1><a href="./index.html">DB ELECTRONICS</a></h1>
+            <h1><a href="./index.html" title="Ir a la página principal de DB Electronics">DB ELECTRONICS</a></h1>
             <p>Todo en electrónica</p>
         </section>
+         
+        <nav class ="navbar">
+            <ul>
+                <li><a href="./productos.html">PRODUCTOS</a></li>
+                <li><a href="./sobre-nosotros.html">SOBRE NOSOTROS</a></li>
+                <li><a href="./contacto.html">CONTACTANOS</a></li>
+                <li><a href="./carrito.html" title="Ver carrito de compras">
+                    <i class="fas fa-shopping-cart"></i> <!-- Ícono  -->
+                    <span id="cart-count">0</span> <!-- Contador -->
+                </a>
+            </li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <h2>Carrito de Compras</h2>
+    <main class="carrito-main">
+        <h1>Carrito de Compras</h1>
         <div id="carrito-container"></div>
         <p id="total">Total: $0</p>
     </main>
