@@ -11,16 +11,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Mostrar productos del carrito
-  carrito.forEach(p => {
-    const item = document.createElement("div");
-    item.classList.add("carrito-item");
-    item.innerHTML = `            
-        <img src="${p.thumbnail}" alt="${p.nombre}" width="50">       
-        <p>${p.nombre}</p>
-        <p>$${p.precio.toFixed(2)}</p>
-    `;
-    carritoContainer.appendChild(item);
-  });
+//   carrito.forEach(p => {
+//     const item = document.createElement("div");
+//     item.classList.add("carrito-item");
+//     item.innerHTML = `            
+//         <img src="${p.imagen}" alt="${p.nombre}" width="50">       
+//         <p>${p.nombre}</p>
+//         <p>$${p.precio.toFixed(2)}</p>
+//     `;
+//     carritoContainer.appendChild(item);
+//   });
+// Contenedor grid
+const gridContainer = document.createElement("div");
+gridContainer.classList.add("carrito-grid");
+carritoContainer.appendChild(gridContainer);
+
+// Mostrar productos en el grid
+carrito.forEach((p, index) => {
+  const item = document.createElement("div");
+  item.classList.add("carrito-item");
+  item.innerHTML = `
+    <img src="${p.imagen}" alt="${p.nombre}">
+    <p><strong>${p.nombre}</strong></p>
+    <p>$${p.precio.toFixed(2)}</p>
+    <p>Cantidad: ${p.cantidad}</p>
+    <button class="eliminar-item" data-index="${index}">Eliminar</button>
+  `;
+  gridContainer.appendChild(item);
+});
+
 
   // Calcular y mostrar total
   const total = carrito.reduce((acc, prod) => acc + prod.precio, 0);
