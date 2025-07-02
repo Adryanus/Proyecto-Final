@@ -64,7 +64,7 @@ function eliminarDelCarrito(index) {
   if (carrito[index].cantidad > 1) {
     carrito[index].cantidad--;
   } else {
-    carrito.splice(index, 1); // elimina el ítem si la cantidad es 1
+    carrito.splice(index, 1); 
   }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -84,7 +84,7 @@ function mostrarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const carritoContainer = document.getElementById("carrito-container");
 
-  if (!carritoContainer) return; // evita error si no existe el contenedor
+  if (!carritoContainer) return; 
 
   carritoContainer.innerHTML = "";
 
