@@ -23,15 +23,33 @@ carrito.forEach((p, index) => {
     <p><strong>${p.nombre}</strong></p>
     <p>$${p.precio.toFixed(2)}</p>
     <p>Cantidad: ${p.cantidad}</p>
-    <button class="eliminar-item" data-index="${index}">Eliminar</button>
+    <button class="eliminar-item" data-index="${index}">Eliminar 1</button>
   `;
   gridContainer.appendChild(item);
 });
 
+
+// Agregar listeners a los botones de eliminar
+document.querySelectorAll(".eliminar-item").forEach(boton => {
+  boton.addEventListener("click", () => {
+    const index = parseInt(boton.dataset.index);
+
+    if (carrito[index].cantidad > 1) {
+      carrito[index].cantidad--;
+    } else {
+      carrito.splice(index, 1);
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    location.reload();
+  });
+});
+
   
-  const total = carrito.reduce((acc, prod) => acc + prod.precio, 0);
+  const total = carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
   totalElement.textContent = `Total: $${total.toFixed(2)}`;
 
+  
   const botonesContainer = document.createElement("div");
   botonesContainer.classList.add("botones-carrito");
 
